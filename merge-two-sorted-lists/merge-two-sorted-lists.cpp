@@ -24,15 +24,10 @@ public:
             }
             l3 = l3 -> next;
         }
-        while(l1){
-            l3 -> next = new ListNode(l1 -> val);
-            l1 = l1 -> next;
-            l3 = l3 -> next;
-        }
-        while(l2){
-            l3 -> next = new ListNode(l2 -> val);
-            l2 = l2 -> next;
-            l3 = l3 -> next;
+        if(l1
+            l3 -> next = l1;
+        else if(l2){
+            l3 -> next = l2;
         }
         return head -> next;
     }
