@@ -8,6 +8,7 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+// NOTE - I know this is a bad solution. Right now I don't know enough to make this more efficient. Will come back to it later.
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
