@@ -1,4 +1,4 @@
-class Solution {
+  class Solution {
 public:
     int maxArea(vector <int> &height) {
         int max_area = 0, l = 0, r = height.size() - 1;
