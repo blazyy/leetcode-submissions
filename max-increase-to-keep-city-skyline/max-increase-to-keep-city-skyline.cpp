@@ -8,18 +8,15 @@ class Solution {
 public:
     int maxIncreaseKeepingSkyline(vector<vector<int>>& grid) {
         
-        int n = grid.size();
-        vector <int> row_maxes(n);
-        vector <int> col_maxes(n);
+        int n = grid.size(), current, total_sum = 0;
+        vector <int> row_maxes(n), col_maxes(n);
         
         for(int r = 0; r < n; r++) {
             for(int c = 0; c < n; c++) {
                 col_maxes[c] = max(col_maxes[c], grid[r][c]);
                 row_maxes[r] = max(row_maxes[r], grid[r][c]);
             }
-        }
-        
-        int current, total_sum = 0;
+        }
         
         for(int r = 0; r < n; r++) {
             for(int c = 0; c < n; c++) {
