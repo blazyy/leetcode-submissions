@@ -28,8 +28,8 @@ public:
         }
         
         // Going through matrix and marking (in the first row and column) which rows and columns have zeros.
-        for(int row = 0; row < nrows; row++) {
-            for(int col = 0; col < ncols; col++) {
+        for(int row = 1; row < nrows; row++) {
+            for(int col = 1; col < ncols; col++) {
                 if(matrix[row][col] == 0) {
                     matrix[0][col] = 0;
                     matrix[row][0] = 0;
