@@ -4,7 +4,7 @@
 ​
 class Solution {
 public:
-    void setZeroes(vector <vector <int>> &matrix) {
+    void setZeroes(vector<vector<int>> &matrix) {
         
         int nrows = matrix.size();
         int ncols = matrix[0].size();
