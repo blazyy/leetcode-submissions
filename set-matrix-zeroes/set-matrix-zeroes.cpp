@@ -27,7 +27,7 @@ public:
             }
         }
         
-        // Going through matrix and marking (in the first row and column) which rows and columns have zeros.
+        // Going through matrix and marking (in the first row and column) which rows and columns have zeros
         for(int row = 1; row < nrows; row++) {
             for(int col = 1; col < ncols; col++) {
                 if(matrix[row][col] == 0) {
@@ -49,20 +49,3 @@ public:
         
         // Last thing is to set the first row to zeroes if the initial unmodified matrix had zeroes in the first row
         if(first_row_has_zeros)
-            set_row_to_zero(matrix, 0);
-        
-        // Same thing but for the column
-        if(first_col_has_zeros)
-            set_col_to_zero(matrix, 0);
-    }
-    
-    void set_row_to_zero(vector <vector <int>> &matrix, int row) {
-        for(int col = 0; col < matrix[0].size(); col++)
-            matrix[row][col] = 0;
-    }
-    
-    void set_col_to_zero(vector <vector <int>> &matrix, int col) {
-        for(int row = 0; row < matrix.size(); row++)
-            matrix[row][col] = 0;
-    }
-};
