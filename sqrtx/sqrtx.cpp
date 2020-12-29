@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int mySqrt(int x) {
-        return sqrt(x);
+    int mySqrt(int n) {
+        return sqrt(n);
     }
 };
