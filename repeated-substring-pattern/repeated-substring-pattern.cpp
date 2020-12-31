@@ -7,11 +7,13 @@
 ​
 class Solution {
 public:
+    
     bool repeatedSubstringPattern(string s) {
         vector <int> lps = computeLPS(s);
         int n = lps.size() - 1;
         return lps[n] and lps[n] % (n + 1 - lps[n]) == 0; 
     }
+    
     vector <int> computeLPS(string str) {
         vector <int> lps (str.length(), 0);
         lps[0] = 0;
@@ -31,6 +33,11 @@ public:
 // Alternate Solution
 ​
 // Concatenate string onto itself. Remove first and last char. If original string exists in new string, the string is a repeated substring pattern.
+​
+// origin_str = pattern + pattern + ... + pattern =  m * pattern; 
+// origin_str + origin_str = 2 * m * pattern;
+// new_str = pattern_wo_head + (2m-2) * pattern + pattern_wo_rear
+// origin_str(m * pattern) could be found in new_str if m >= 2.
 ​
 // Time Complexity  - O(n)
 // Space Complexity - O(1)
