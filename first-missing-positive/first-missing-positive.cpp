@@ -23,7 +23,7 @@ public:
         }
         
         // If a positive number wasn't found or if the smallest positive number isn't 1, return 1;
-        if((sm_pos_idx == 0 and sm_pos < 1) || sm_pos > 1)
+        if(sm_pos == -1 || sm_pos > 1)
             return 1;
         
         // Looking for any missing numbers in the sorted list
