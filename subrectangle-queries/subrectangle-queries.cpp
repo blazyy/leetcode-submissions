@@ -8,11 +8,11 @@ public:
     vector <vector <int>> rect, updates;
     
     SubrectangleQueries(vector <vector <int>> &rectangle) {
-        rect = rectangle;
+        swap(rect, rectangle); // Faster than doing rect = rectangle. Why? Is it because doing the latter has to copy all the elements?
     }
     
     void updateSubrectangle(int row1, int col1, int row2, int col2, int newValue) {
-        updates.push_back(vector <int> {row1, col1, row2, col2, newValue});
+        updates.push_back({row1, col1, row2, col2, newValue});
     }
     
     int getValue(int row, int col) {
