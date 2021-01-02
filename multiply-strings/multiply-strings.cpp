@@ -28,6 +28,7 @@ public:
             }
             num_zeros++; // Used to emulate zeroes added in manual multiplication. Here it just moves p forward (or backward in terms of indices)
         }
+        
         if(product[p] != '0')
             return product.substr(p, m + n); // For cases where the size of the new number is m + n 
         return product.substr(p + 1, m + n); // For cases where the size of the new number m + n - 1
