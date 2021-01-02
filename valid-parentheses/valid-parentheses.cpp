@@ -1,4 +1,4 @@
-// If opening parentheses, push to stack. Else, check if current closing parentheses matches opening parentheses at stack top. If so, pop. If not, return false. At the end of the string, if there are still items in the stack, return false, because these are opening parentheses that wouldn't be closed.
+// If opening parentheses, push to stack. Else, return false if stack is empty. Else, check if current closing parentheses matches opening parentheses at stack top. If so, pop. If not, return false. At the end of the string, if there are still items in the stack, return false, because these are opening parentheses that wouldn't be closed.
 // Time Complexity  - O(n)
 // Space Complexity - O(n)
 ​
