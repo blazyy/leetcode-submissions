@@ -1,3 +1,7 @@
+// Each digit could be at most 200 digits long. Converting the string to integers and mutiplying wouldn't work here because of overlflow. So the code is based on digit by digit manual multiplication (the one you do by hand)
+// Time Complexity - O(log(M + N)) where M and N are the numbers (OR) O(m x n) where m and n are the number of digits in each of the numbers
+// Space Complexity - O(1)
+​
 class Solution {
 public:
     string multiply(string num1, string num2) {
