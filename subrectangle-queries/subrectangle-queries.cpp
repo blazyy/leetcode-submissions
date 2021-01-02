@@ -1,6 +1,5 @@
 class SubrectangleQueries {
 public:
-    
     vector <vector <int>> rectangle;
     
     SubrectangleQueries(vector <vector <int>> &rect) {
