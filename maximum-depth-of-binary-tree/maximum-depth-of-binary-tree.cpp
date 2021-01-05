@@ -10,44 +10,44 @@
  * };
  */
 ​
-// Iterative DFS. The number of nodes in the stack is the depth of the tree at any point in the traversal. The maximum number of elements seen in the stack at any point of time will give us the depth of the tree.
-// TC - O(n) where n is the number of nodes in the tree
+// BFS. Depth increases when all nodes of a level have been dealt with.
+// TC - O(n)
 // SC - O(n)
 class Solution {
 public:
     int maxDepth(TreeNode *root) {
         if(root == nullptr) return 0;
-        int max_depth = 0;
-        stack <TreeNode *> s;
-        vector <TreeNode *> visited;
+        int max_depth = 0, depth = 0, nodes_in_current_level;
+        queue <TreeNode *> q;
         TreeNode *current = root;
-        s.push(current);
-        visited.push_back(current);
-        while(!s.empty()) {
-            current = s.top();
-            max_depth = max(max_depth, (int)s.size());
-            if(current -> left and find(visited.begin(), visited.end(), current -> left) == visited.end()) {
-                s.push(current -> left);
-                visited.push_back(current -> left);
+        q.push(current);
+        while(q.size()) {
+            nodes_in_current_level = q.size();
+            while(nodes_in_current_level) {
+                current = q.front(); q.pop();
+                if(current -> left) q.push(current -> left);
+                if(current -> right) q.push(current -> right);
+                nodes_in_current_level--;
             }
-            else if(current -> right and find(visited.begin(), visited.end(), current -> right) == visited.end()) {
-                s.push(current -> right);
-                visited.push_back(current -> right);
-            }
-            else s.pop();
+            depth++;
+            max_depth = max(max_depth, depth);
         }
         return max_depth;
     }
 };
 ​
-// Old Solution
-// Recursive DFS.
-// TC - O(n) ?
-// SC - O(n) ?
+// Iterative DFS. We keep track of current depth using a stack. Each item in the depths stack corresponds to the depth of the item in the same place/index as the node in the other stack.
+// TC - O(n) where n is the number of nodes in the tree
+// SC - O(n)
 // class Solution {
 // public:
-//     int maxDepth(TreeNode* root) {
+//     int maxDepth(TreeNode *root) {
 //         if(root == nullptr) return 0;
-//         return max(maxDepth(root -> left), maxDepth(root -> right)) + 1;
-//     }
-// };
+//         int max_depth = 0;
+//         TreeNode *current = root;
+//         stack <int> depths; stack <TreeNode *> s;
+//         s.push(current); depths.push(1);
+//         while(!s.empty()) {
+//             current = s.top(); cout << current -> val << " "; s.pop();
+//             int temp = depths.top(); depths.pop();
+//             max_depth = max(max_depth, temp);
