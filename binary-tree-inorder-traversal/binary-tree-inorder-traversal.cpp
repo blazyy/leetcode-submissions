@@ -16,14 +16,14 @@ class Solution {
 public:
     vector <int> inorderTraversal(TreeNode* root) {
         vector <int> traversal;
-        stack <TreeNode *> s;
-        TreeNode *current = root;
+        stack <TreeNode*> s;
+        TreeNode* current = root;
         while(true) {
             if(current) {
                 s.push(current);
                 current = current -> left;
             }
-            else if (s.size()) {
+            else if(s.size()) {
                 current = s.top(); s.pop();
                 traversal.push_back(current -> val);
                 current = current -> right;
@@ -49,3 +49,7 @@ public:
 //     void inorder(TreeNode *root) {
 //         if(!root) return;
 //         inorder(root -> left);
+//         traversal.push_back(root -> val);
+//         inorder(root -> right);
+//     }
+// };
