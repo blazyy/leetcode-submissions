@@ -9,6 +9,8 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+// TC - O(n)
+// SC - O(h)
 class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
@@ -24,7 +26,7 @@ public:
             else if(s.size()) {
                 current = s.top(); s.pop();
                 current = current -> right;
-            }
+            }
             else break;
         }
         return traversal;
