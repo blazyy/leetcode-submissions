@@ -11,7 +11,7 @@
  */
 // Using two stacks. Postorder in reverse is similar to preorder. Only difference is, we visit the right child first. Push the traversal onto the stack. Then pop one by one to get the reverse.
 // TC - O(n)
-// SC - O(h)
+// SC - O(n)
 class Solution {
 public:
     vector<int> postorderTraversal(TreeNode* root) {
